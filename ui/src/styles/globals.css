@@ -1,0 +1,33 @@
+.full {
+	height: 100%;
+	width: 100%;
+}
+
+.center.text-only {
+	text-align: center;
+}
+
+.center.all.with-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center.vertically.with-flex {
+	display: flex;
+	align-items: center;
+}
+
+.center.horizontally.with-flex {
+	display: flex;
+	justify-content: center;
+}
+
+.center.with-grid {
+	display: grid;
+	place-items: center;
+}
+
+.center.with-grid > * {
+	place-self: center;
+}
