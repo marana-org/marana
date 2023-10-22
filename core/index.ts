@@ -1,12 +1,27 @@
 import express from "express";
 import { PORT } from "./.env.json";
+import { auth } from "./auth/lucia";
+import { createUser } from "./routes";
+import { db } from "./util/db";
 
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
+  const authRequest = auth.handleRequest(req, res);
   res.send("Hello World!");
+  console.log(authRequest);
 });
 
+app.post("/auth/user/new", createUser);
+
 app.listen(PORT, () => {
-  console.log("Listening on port 3000!");
+  const connection = db();
+  if (connection) {
+    console.log(`Server is running on port ${PORT}`);
+  } else {
+    console.log("Failed to connect to database!");
+    process.exit(1);
+  }
 });
