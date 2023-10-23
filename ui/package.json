@@ -33,6 +33,7 @@
 		"@lucia-auth/adapter-mongoose": "^3.0.0",
 		"dotenv": "^16.3.1",
 		"lucia": "^2.7.1",
+		"lucide-svelte": "^0.288.0",
 		"mongoose": "^7.6.3",
 		"normalize.css": "^8.0.1"
 	}

@@ -1149,6 +1149,11 @@ lucia@^2.7.1:
   resolved "https://registry.yarnpkg.com/lucia/-/lucia-2.7.1.tgz#e9c37850578142b463fcdf18307c2735f0389b4f"
   integrity sha512-EHDTajS1YWA7Q37jd29Far1l4nfZgsWLp4hDQeaQhVpJd2WKQqA3626kJYmOj1CTweVMkE54xFi5JIph+agZkQ==
 
+lucide-svelte@^0.288.0:
+  version "0.288.0"
+  resolved "https://registry.yarnpkg.com/lucide-svelte/-/lucide-svelte-0.288.0.tgz#7041d6990a3a0c1402d1d9ab1374bcf32b0bf497"
+  integrity sha512-rgpEAifh+Xs6aRCk3PmNO1yAMF7E3764fRvTDj1BSEI9VdfDQIabjx07Uh8KeMy2SB9dmp565F/H3fHTWQ49fw==
+
 magic-string@^0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.27.0.tgz#e4a3413b4bab6d98d2becffd48b4a257effdbbf3"
