@@ -8,6 +8,14 @@ const User = mongodb.model(
         type: String,
         required: true,
       },
+      hierarchy: {
+        type: String,
+        required: true,
+      },
+      attributes: {
+        type: Object,
+        required: false,
+      },
     } as const,
     { _id: false }
   )
