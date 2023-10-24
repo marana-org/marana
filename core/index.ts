@@ -18,9 +18,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/auth/user/new", createUser);
-app.post("/test", checkSession, (req, res) => {
-  res.send("Hello World!");
-});
 
 app.listen(PORT, () => {
   const connection = db();
