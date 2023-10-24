@@ -3,6 +3,7 @@ import { auth } from "../../../core/auth/lucia";
 import { useID } from "../../util/id";
 
 const createUser = async (req: Request, res: Response) => {
+  const authRequest = auth.handleRequest(req, res);
   try {
     const user = await auth.createUser({
       key: {
@@ -13,7 +14,12 @@ const createUser = async (req: Request, res: Response) => {
       attributes: {},
       userId: useID.gen("user"),
     });
-    console.log(user);
+    const session = await auth.createSession({
+      sessionId: useID.gen("session"),
+      userId: user.userId,
+      attributes: {},
+    });
+    authRequest.setSession(session);
     return res.status(200).json(user);
   } catch (error) {
     console.log(error);

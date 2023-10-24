@@ -1,5 +1,5 @@
 import { Pika } from "pika-id";
 
-export const useID = new Pika(["user"], {
+export const useID = new Pika(["user", "session"], {
   epoch: 1696425840,
 });
