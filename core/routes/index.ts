@@ -1,4 +1,3 @@
-import { createUser } from "./auth/new";
-import { loginUser } from "./auth/login";
+import { createUser, loginUser } from "./auth";
 
 export { createUser, loginUser };
