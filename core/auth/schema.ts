@@ -62,4 +62,37 @@ const Session = mongodb.model(
   )
 );
 
-export { User, Key, Session };
+const Classes = mongodb.model(
+  "Classes",
+  new mongodb.Schema(
+    {
+      _id: {
+        type: String,
+        required: true,
+      },
+      class_id: {
+        type: String,
+        required: true,
+      },
+      class_name: {
+        type: String,
+        required: true,
+      },
+      class_teacher: {
+        type: String,
+        required: true,
+      },
+      class_students: {
+        type: Array,
+        required: true,
+      },
+      class_assignments: {
+        type: Array,
+        required: true,
+      },
+    } as const,
+    { _id: false }
+  )
+);
+
+export { User, Key, Session, Classes };
