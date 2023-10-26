@@ -7,11 +7,22 @@ const createUser = async (req: Request, res: Response) => {
   try {
     const user = await auth.createUser({
       key: {
-        providerId: "username",
+        providerId: "studentID",
         providerUserId: req.body.studentID,
         password: req.body.password || null,
       },
-      attributes: {},
+      attributes: {
+        details: {
+          name: {
+            legalFirst: req.body.firstName,
+            legalLast: req.body.lastName,
+            preferred: req.body.preferredName || req.body.firstName
+          },
+          email: req.body.email,
+          grade: req.body.year,
+        },
+        hierarchy: req.body.hierarchy === null ? "student" : null,
+      },
       userId: useID.gen("user"),
     });
     const session = await auth.createSession({

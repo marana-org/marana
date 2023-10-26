@@ -1,7 +1,7 @@
 import express from "express";
 import { PORT } from "./.env.json";
 import { auth } from "./auth/lucia";
-import { createUser } from "./routes";
+import { createUser, loginUser } from "./routes";
 import { db } from "./util/db";
 import { checkSession } from "./util/middleware/session";
 import cookieParser from "cookie-parser";
@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/auth/user/new", createUser);
+app.post("/auth/user/authenticate", loginUser);
 
 app.listen(PORT, () => {
   const connection = db();
