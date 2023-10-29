@@ -1,9 +1,10 @@
 import express from "express";
 import { PORT } from "./.env.json";
 import { auth } from "./auth/lucia";
-import { createUser, loginUser } from "./routes";
+import { createUser, loginUser, createClassAdministrative } from "./routes";
 import { db } from "./util/db";
 import { checkSession } from "./util/middleware/session";
+import { checkAdmin } from "./util/middleware/admin";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.post("/auth/user/new", createUser);
 app.post("/auth/user/authenticate", loginUser);
+app.post("/class/new", checkAdmin, createClassAdministrative);
 
 app.listen(PORT, () => {
   const connection = db();

@@ -79,16 +79,16 @@ const Classes = mongodb.model(
         required: true,
       },
       class_teacher: {
-        type: String,
+        type: Object,
         required: true,
       },
       class_students: {
         type: Array,
-        required: true,
+        required: false,
       },
       class_assignments: {
         type: Array,
-        required: true,
+        required: false,
       },
     } as const,
     { _id: false }
