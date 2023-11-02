@@ -11,7 +11,7 @@ const checkSession: express.RequestHandler = async (
 	if (!req.cookies.auth_session)
 		return res.status(401).json({ error: "Unauthorized" });
 	const session = await auth.validateSession(req.cookies.auth_session);
-	const user = await auth.getUser(session?.userId);
+	const user = await auth.getUser(session?.user.userId);
 
 	req.authRequest = authRequest;
 	req.authRequest.user = user;
