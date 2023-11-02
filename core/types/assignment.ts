@@ -10,7 +10,7 @@ interface Assignment {
 	id: id;
 	title: string;
 	description?: string;
-	due: Date;
+	due: number;
 	class: id;
 	assignedTo: id[] | "all" | "readonly";
 	method: "text" | "file" | "quiz" | "external";
