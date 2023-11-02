@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-  const authRequest = auth.handleRequest(req, res);
-  res.send("Hello World!");
-  console.log(authRequest);
+	const authRequest = auth.handleRequest(req, res);
+	res.send("Hello World!");
+	console.log(authRequest);
 });
 
 app.post("/auth/user/new", createUser);
@@ -23,11 +23,11 @@ app.post("/auth/user/authenticate", loginUser);
 app.post("/class/new", checkAdmin, createClassAdministrative);
 
 app.listen(PORT, () => {
-  const connection = db();
-  if (connection) {
-    console.log(`Server is running on port ${PORT}`);
-  } else {
-    console.log("Failed to connect to database!");
-    process.exit(1);
-  }
+	const connection = db();
+	if (connection) {
+		console.log(`Server is running on port ${PORT}`);
+	} else {
+		console.log("Failed to connect to database!");
+		process.exit(1);
+	}
 });

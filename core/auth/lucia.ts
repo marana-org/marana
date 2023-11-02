@@ -6,13 +6,13 @@ import { User, Key, Session } from "./schema";
 import { ENV } from "../.env.json";
 
 export const auth = lucia({
-  env: ENV as Env,
-  middleware: express(),
-  adapter: mongoose({
-    User,
-    Key,
-    Session,
-  }),
+	env: ENV as Env,
+	middleware: express(),
+	adapter: mongoose({
+		User,
+		Key,
+		Session
+	})
 });
 
 export type Auth = typeof auth;
