@@ -14,7 +14,7 @@ interface Assignment {
 	class: id;
 	assignedTo: id[] | "all" | "readonly";
 	method: "text" | "file" | "quiz" | "external";
-	submitted:
+	submitted?:
 		| TextSubmission
 		| FileSubmission
 		| QuizSubmission
