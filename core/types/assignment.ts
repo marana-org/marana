@@ -15,10 +15,10 @@ interface Assignment {
 	assignedTo: id[] | "all" | "readonly";
 	method: "text" | "file" | "quiz" | "external";
 	submitted?:
-		| TextSubmission
-		| FileSubmission
-		| QuizSubmission
-		| ExternalSubmission;
+		| TextSubmission[]
+		| FileSubmission[]
+		| QuizSubmission[]
+		| ExternalSubmission[];
 	type?: "homework" | "test" | "quiz" | "project" | "other";
 	points?: number;
 	external?: {
