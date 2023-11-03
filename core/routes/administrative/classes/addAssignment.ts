@@ -49,12 +49,10 @@ const createAssignment = async (
 			{ new: true }
 		);
 
-		return res
-			.status(200)
-			.json({
-				message: "Assignment created successfully",
-				class: updatedClass
-			});
+		return res.status(200).json({
+			message: "Assignment created successfully",
+			class: updatedClass
+		});
 	} catch (error) {
 		console.error(error);
 		return res

@@ -5,7 +5,8 @@ import {
 	createUser,
 	loginUser,
 	createClassAdministrative,
-	createAssignment
+	createAssignment,
+	submitAssignment
 } from "./routes";
 import { db } from "./util/db";
 import { checkSession } from "./util/middleware/session";
@@ -27,6 +28,7 @@ app.post("/auth/user/new", createUser);
 app.post("/auth/user/authenticate", loginUser);
 app.post("/class/new", checkAdmin, createClassAdministrative);
 app.post("/class/:id/assignment/new", checkManager, createAssignment);
+app.post("/class/:id/assignment/submit", checkSession, submitAssignment);
 
 app.listen(PORT, () => {
 	const connection = db();
