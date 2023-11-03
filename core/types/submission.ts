@@ -8,12 +8,12 @@ interface SubmittedAssignment {
 		| QuizSubmission
 		| ExternalSubmission;
 	submittedBy: id;
-	submittedAt: Date;
+	submittedAt: number;
 	class: id;
 	status: "submitted" | "graded";
 
 	points?: number;
-	gradedAt?: Date;
+	gradedAt?: number;
 	responses?: string[];
 }
 
