@@ -6,7 +6,9 @@ import {
 	loginUser,
 	createClassAdministrative,
 	createAssignment,
-	submitAssignment
+	submitAssignment,
+	getAssignment,
+	getAllAssignments
 } from "./routes";
 import { db } from "./util/db";
 import { checkSession } from "./util/middleware/session";
@@ -28,6 +30,8 @@ app.post("/auth/user/new", createUser);
 app.post("/auth/user/authenticate", loginUser);
 app.post("/class/new", checkAdmin, createClassAdministrative);
 app.post("/class/:id/assignment/new", checkManager, createAssignment);
+app.get("/class/:id/assignment", checkSession, getAssignment);
+app.get("/class/:id/assignment/all", checkSession, getAllAssignments);
 app.post("/class/:id/assignment/submit", checkSession, submitAssignment);
 
 app.listen(PORT, () => {
