@@ -7,7 +7,6 @@
 </script>
 
 <div class="form center text-only">
-	<h1>Log In as {data.hierarchy}</h1>
 	<form class="center vertically with-flex column" method="post">
 		<div class="input">
 			<TextBox onchange={(value) => (user.email = value)} placeholder="User ID" name="userid" />

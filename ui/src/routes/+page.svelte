@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Card from '$lib/components/card.svelte';
 	import { GithubIcon, ExternalLinkIcon } from 'lucide-svelte';
 </script>
 
@@ -10,8 +11,7 @@
 </svelte:head>
 
 <div class="page full">
-	<div class="card center text-only">
-		<h1>Marana</h1>
+	<Card title="Marana">
 		<p>The LMS for the future</p>
 		<a href="https://github.com/marana-org/marana" target="_blank" rel="noopener noreferrer">
 			<div class="button center all with-flex">
@@ -25,16 +25,10 @@
 				<span>Notion</span>
 			</div>
 		</a>
-	</div>
+	</Card>
 </div>
 
 <style>
-	:global(body) {
-		background-color: #50e3c2;
-		background-image: radial-gradient(at 47% 33%, rgb(23, 181, 133) 0, transparent 59%),
-			radial-gradient(at 82% 65%, rgb(102, 0, 255) 0, transparent 55%);
-	}
-
 	.page {
 		display: flex;
 		align-items: center;
