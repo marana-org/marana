@@ -2,6 +2,7 @@ import express from "express";
 import { PORT } from "./.env.json";
 import { auth } from "./auth/lucia";
 import {
+	getClass,
 	createUser,
 	loginUser,
 	createClassAdministrative,
@@ -30,6 +31,7 @@ app.post("/auth/user/new", createUser);
 app.post("/auth/user/authenticate", loginUser);
 app.post("/class/new", checkAdmin, createClassAdministrative);
 app.post("/class/:id/assignment/new", checkManager, createAssignment);
+app.get("/class", checkSession, getClass);
 app.get("/class/:id/assignment", checkSession, getAssignment);
 app.get("/class/:id/assignment/all", checkSession, getAllAssignments);
 app.post("/class/:id/assignment/submit", checkSession, submitAssignment);
