@@ -3,7 +3,7 @@ import { AuthRequest } from "../../types/authenticatedRequest";
 import { Classes } from "../../auth/schema";
 
 export const getClass = async (req: AuthRequest, res: express.Response) => {
-	const { from_teacher, search_query, grade, assignments_includes, count } =
+	const { from_teacher, search_query, grade, assignments_includes, class_id, count } =
 		req.query;
 
 	const query = await Classes.find({
@@ -12,7 +12,8 @@ export const getClass = async (req: AuthRequest, res: express.Response) => {
 		...(search_query && {
 			class_name: { $regex: search_query, $options: "i" }
 		}),
-		...(assignments_includes && { class_assignments: { $exists: true } })
+		...(assignments_includes && { class_assignments: { $exists: true } }),
+		...(class_id && { class_id: class_id }),
 	});
 
 	if (grade !== undefined) {
