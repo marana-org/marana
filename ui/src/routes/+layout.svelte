@@ -34,12 +34,14 @@
 </svelte:head>
 
 {#key data.url}
-	<div
-		class="container full"
-		in:blur={{ duration: 300, delay: 300, amount: 5 }}
-		out:blur={{ duration: 300 }}
-	>
-		<slot />
+	<div class="container full">
+		<div
+			class="full animation {navigating ? 'navigating' : ''}"
+			in:blur={{ duration: 300, delay: 300, amount: 5 }}
+			out:blur={{ duration: 300 }}
+		>
+			<slot />
+		</div>
 	</div>
 {/key}
 
