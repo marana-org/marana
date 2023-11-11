@@ -7,24 +7,28 @@
 	text-align: center;
 }
 
-.center.all.with-flex {
+.with-flex {
 	display: flex;
+}
+
+.with-grid {
+	display: grid;
+}
+
+.center.all.with-flex {
 	align-items: center;
 	justify-content: center;
 }
 
 .center.vertically.with-flex {
-	display: flex;
 	align-items: center;
 }
 
 .center.horizontally.with-flex {
-	display: flex;
 	justify-content: center;
 }
 
 .center.with-grid {
-	display: grid;
 	place-items: center;
 }
 
