@@ -7,6 +7,7 @@
 	import '../styles/full-page.css';
 	import '../styles/progress.css';
 	import '@fontsource/inter';
+	import 'fluent-svelte/theme.css';
 	import 'normalize.css';
 
 	export let data: PageData;
@@ -44,3 +45,11 @@
 		</div>
 	</div>
 {/key}
+
+<style>
+	:global(:root) {
+		--fds-font-family-text: 'Inter', sans-serif;
+		--fds-font-family-small: 'Inter', sans-serif;
+		--fds-font-family-display: 'Inter', sans-serif;
+	}
+</style>
