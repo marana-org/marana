@@ -1,9 +1,5 @@
 <script lang="ts">
-	import Card from '$lib/components/card.svelte';
-</script>
+	import type { PageData } from './$types';
 
-<div class="full center all with-flex">
-	<Card title="Log in">
-		<slot />
-	</Card>
-</div>
+	export let data: PageData;
+</script>

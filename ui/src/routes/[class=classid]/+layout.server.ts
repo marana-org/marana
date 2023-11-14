@@ -8,7 +8,7 @@ export const load = (async ({ fetch, params, cookies }) => {
 	if (!sessionId) throw new Error('No session id found');
 
 	const session = await auth.getSession(sessionId);
-	
+
 	if (session.state !== 'active') throw new Error('Session is inactive or invalid');
 
 	const classData = await fetch(
