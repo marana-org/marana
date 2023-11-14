@@ -35,3 +35,11 @@
 .center.with-grid > * {
 	place-self: center;
 }
+
+.with-flex.row {
+	flex-direction: row;
+}
+
+.with-flex.column {
+	flex-direction: column;
+}
