@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { Providers } from "./providers";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Plus_Jakarta_Sans({
+  weight: "variable",
+  variable: "--plus-jakarta-sans",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`dark ${font.className}`}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
